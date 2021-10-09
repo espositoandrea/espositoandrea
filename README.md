@@ -4,6 +4,8 @@ Hi, I'm Andrea Esposito [![My ORCID record: 0000-0002-9536-3087](https://info.or
 
 As a strong supporter of Free (as in "libre") Software, here you'll find all my projects, configuration files, and similar things.
 
+![Twitter Follow](https://img.shields.io/twitter/follow/espositoandrea_?label=Follow%20me%21&style=social)
+
 <!--
 **espositoandrea/espositoandrea** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
 
