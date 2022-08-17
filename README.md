@@ -1,6 +1,6 @@
 ### Hi there 👋
 
-Hi, I'm Andrea Esposito [![My ORCID record: 0000-0002-9536-3087](https://info.orcid.org/wp-content/uploads/2019/11/orcid_16x16.png)](https://orcid.org/0000-0002-9536-3087). I'm an early-stage reasearcher at the University of Bari "Aldo Moro", while studying for a Master's Degree in Computer Science (following a curriculum on Artificial Intelligence) at the same University. My research interests are broadly described as regarding Human-Computer Interaction, Human-AI Interaction, Human-Centered AI, Usability & UX, AI, and eXplainable AI.
+Hi, I'm Andrea Esposito [![My ORCID record: 0000-0002-9536-3087](https://info.orcid.org/wp-content/uploads/2019/11/orcid_16x16.png)](https://orcid.org/0000-0002-9536-3087). I'm an early-stage reasearcher at the University of Bari "Aldo Moro". My research interests are broadly described as regarding Human-Computer Interaction, Human-AI Interaction, Human-Centered AI, Usability & UX, AI, and eXplainable AI.
 
 As a strong supporter of Free (as in "libre") Software, here you'll find all my projects, configuration files, and similar things.
 
