@@ -1,0 +1,19 @@
+name: Latest Medium Stories workflow
+on:
+  push:
+    branches: [ "master" ]
+  schedule:
+    # Runs every hour
+    - cron: '0 0 * * *'
+  workflow_dispatch:
+
+jobs:
+  update-readme-with-blog:
+    name: Update this repo's README with latest Medium posts
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: gautamkrishnar/blog-post-workflow@master
+        with:
+          comment_tag_name: "MEDIUM-STORY-LIST"
+          feed_list: "https://medium.com/feed/@espositoandrea"
