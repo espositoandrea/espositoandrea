@@ -8,7 +8,7 @@ As a strong supporter of Free (as in "libre") Software, here you'll find all my 
 
 ### 📚 Latest Medium Stories
 <!-- MEDIUM-STORY-LIST:START -->
-- [To Automate or To Augment Humans?](https://espositoandrea.medium.com/to-automate-or-to-augment-humans-c3f805d35d55?source=rss-a841ccff2a2d------2)
+- [To Automate or To Augment Humans?](https://ai.gopubby.com/to-automate-or-to-augment-humans-c3f805d35d55?source=rss-a841ccff2a2d------2)
 - [Detecting Brain Tumors through Multi-modal AI Models](https://espositoandrea.medium.com/detecting-brain-tumors-through-multi-modal-ai-models-416c89edcc78?source=rss-a841ccff2a2d------2)
 - [The Future of Alzheimer’s Diagnosis: Unlocking Insights with Multi-modal Imaging Models](https://espositoandrea.medium.com/the-future-of-alzheimers-diagnosis-unlocking-insights-with-multi-modal-imaging-models-94fdc1db1039?source=rss-a841ccff2a2d------2)
 - [My Thoughts on the Evolution of AI Research](https://espositoandrea.medium.com/my-thoughts-on-the-evolution-of-ai-research-445660180906?source=rss-a841ccff2a2d------2)
