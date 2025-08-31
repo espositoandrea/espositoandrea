@@ -8,9 +8,9 @@ As a strong supporter of Free (as in "libre") Software, here you'll find all my 
 
 ### 📚 Latest Medium Stories
 <!-- MEDIUM-STORY-LIST:START -->
+- [I recently got a typewriter in an attempt to regain my focus](https://espositoandrea.medium.com/i-recently-got-a-typewriter-in-an-attempt-to-regain-my-focus-a14ff2095291?source=rss-a841ccff2a2d------2)
 - [The Power of Handwriting: Embracing Slowness in a Digital World](https://espositoandrea.medium.com/the-power-of-handwriting-embracing-slowness-in-a-digital-world-14c60e3043fb?source=rss-a841ccff2a2d------2)
 - [Beyond Automation, Toward Symbiosis: Interactions Between Humans and Artificial Intelligence](https://espositoandrea.medium.com/beyond-automation-toward-symbiosis-interactions-between-humans-and-artificial-intelligence-0f5218495063?source=rss-a841ccff2a2d------2)
 - [Is automation really the best use of AI?](https://ai.gopubby.com/is-automation-really-the-best-use-of-ai-9620352ab531?source=rss-a841ccff2a2d------2)
 - [How to design AI for empowering humans](https://medium.com/design-bootcamp/how-to-design-ai-for-empowering-humans-9d7cf49fe6c4?source=rss-a841ccff2a2d------2)
-- [To Automate or To Augment Humans?](https://ai.gopubby.com/to-automate-or-to-augment-humans-c3f805d35d55?source=rss-a841ccff2a2d------2)
 <!-- MEDIUM-STORY-LIST:END -->
