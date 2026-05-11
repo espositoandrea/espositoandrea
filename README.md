@@ -23,6 +23,7 @@ As a strong supporter of Free (as in "libre") Software, here you'll find all my 
 This is just a selection of the scientific articles I consider "most relevant." A more complete list of my articles, with links to open access versions, is available on [my website](https://espositoandrea.github.io/publications)
 
 <!-- SCIENTIFIC-ARTICLES-LIST:START -->
+- <a href="https://doi.org/10.1080/10447318.2026.2659951"><img src="https://img.shields.io/badge/DOI-10.1080%2F10447318.2026.2659951-cfd8dc?labelColor=black&style=flat-square" align="right"></a>**Conversational AI for Digital Accessibility: An Experimental Study Involving Blind and Low Vision Users (2026)**
 - <a href="https://doi.org/10.1007/s11023-025-09753-w"><img src="https://img.shields.io/badge/DOI-10.1007%2Fs11023--025--09753--w-cfd8dc?labelColor=black&style=flat-square" align="right"></a>**Building Symbiotic Artificial Intelligence: Reviewing the AI Act for a Human-Centred, Principle-Based Framework (2025)**
 - <a href="https://doi.org/10.1016/j.ijhcs.2025.103648"><img src="https://img.shields.io/badge/DOI-10.1016%2Fj.ijhcs.2025.103648-cfd8dc?labelColor=black&style=flat-square" align="right"></a>**Understanding User Mental Models in AI-driven Code Completion Tools: Insights from an Elicitation Study (2025)**
 - <a href="https://doi.org/10.1038/s41597-025-06079-1"><img src="https://img.shields.io/badge/DOI-10.1038%2Fs41597--025--06079--1-cfd8dc?labelColor=black&style=flat-square" align="right"></a>**A Dataset of Interactions and Emotions for Website User Experience Evaluation (2025)**
