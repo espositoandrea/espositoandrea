@@ -14,7 +14,7 @@ As a strong supporter of Free (as in "libre") Software, here you'll find all my 
 - [I recently got a typewriter in an attempt to regain my focus](https://espositoandrea.medium.com/i-recently-got-a-typewriter-in-an-attempt-to-regain-my-focus-a14ff2095291?source=rss-a841ccff2a2d------2)
 - [The Power of Handwriting: Embracing Slowness in a Digital World](https://espositoandrea.medium.com/the-power-of-handwriting-embracing-slowness-in-a-digital-world-14c60e3043fb?source=rss-a841ccff2a2d------2)
 - [Beyond Automation, Toward Symbiosis: Interactions Between Humans and Artificial Intelligence](https://espositoandrea.medium.com/beyond-automation-toward-symbiosis-interactions-between-humans-and-artificial-intelligence-0f5218495063?source=rss-a841ccff2a2d------2)
-- [Is automation really the best use of AI?](https://ai.gopubby.com/is-automation-really-the-best-use-of-ai-9620352ab531?source=rss-a841ccff2a2d------2)
+- [Is automation really the best use of AI?](https://aiadvances.org/is-automation-really-the-best-use-of-ai-9620352ab531?source=rss-a841ccff2a2d------2)
 <!-- MEDIUM-STORY-LIST:END -->
 
 ### Scientific Articles
