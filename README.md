@@ -1,6 +1,8 @@
-### Hi there 👋
+<!-- Special thanks to https://github.com/rougier/rougier/ which game me the idea to style my personal README like this -->
+<h2 align="center">Andrea Esposito</h2>
+<p><pre align="center"><a href="https://www.labri.fr/perso/nrougier">Homepage</a> / <a href="https://toot.aquilenet.fr/@rougier">Mastodon</a> / <a href="https://www.reddit.com/user/Nicolas-Rougier/submitted/?sort=top">Reddit</a> / <a href="https://github.com/rougier">GitHub</a> / <a href="https://gist.github.com/rougier">Gist</a> / <a href="https://stackoverflow.com/users/3348261/nicolas-rougier">Stack Overflow</a> / <a href="https://www.slideshare.net/NicolasRougier1">Slideshare</a> / <a href="https://www.shadertoy.com/user/rougier">Shadertoy</a></pre></p>
 
-<!-- Special thanks to https://github.com/rougier/rougier/ which game me the idea to show my personal README like this -->
+
 
 Hi, I'm Andrea Esposito [![My ORCID record: 0000-0002-9536-3087](https://info.orcid.org/wp-content/uploads/2019/11/orcid_16x16.png)](https://orcid.org/0000-0002-9536-3087). I'm a research fellow working on Human--AI interaction, and I hold a PhD in Computer Science and Mathematics at the University of Bari "Aldo Moro". My research interests are broadly described as regarding Human-Computer Interaction, Human-AI Interaction, Human-Centered AI, Usability & UX, AI, and eXplainable AI.
 
