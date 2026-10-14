@@ -1,0 +1,28 @@
+name: Publications workflow
+on:
+  schedule:
+    # Runs every day
+    - cron: '0 1 * * *'
+  # Lets the website repository trigger an update right after it changes.
+  repository_dispatch:
+    types: [ publications-updated ]
+  workflow_dispatch:
+
+# Shared with the blog posts workflow, so the two never push at the same time.
+concurrency: readme-update
+
+permissions:
+  contents: write
+
+jobs:
+  update-readme-with-publications:
+    name: Update this repo's README with publications from my website
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v6
+      - run: uv run publications.py
+      - uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: Updated with the latest publications
+          file_pattern: README.md

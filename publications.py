@@ -1,86 +1,127 @@
 #!/usr/bin/env python3
+# /// script
+# requires-python = ">=3.10"
+# dependencies = ["pybtex>=0.24", "pyyaml>=6"]
+# ///
+"""Update the publication lists in README.md from my website's data.
 
-import dataclasses
+The website (https://espositoandrea.github.io) is the single source of truth:
+- featured publications come from `_data/highlights.yml`;
+- journal articles come from `_bibliography/references.bib`.
+
+Run with `uv run publications.py`. Set WEBSITE_DIR to read a local checkout of
+the website instead of downloading the files from GitHub.
+"""
+
+import os
+import re
 import urllib.parse
+import urllib.request
+from pathlib import Path
+
+import yaml
+from pybtex.database import parse_string
+from pybtex.richtext import Text
+
+SITE = "https://espositoandrea.github.io"
+RAW = "https://raw.githubusercontent.com/espositoandrea/espositoandrea.github.io/main"
+README = Path(__file__).with_name("README.md")
+ME = ("Esposito", "Andrea")
+JOURNAL_ARTICLES = 10
+MONTHS = {m: i for i, m in enumerate("jan feb mar apr may jun jul aug sep oct nov dec".split(), 1)}
 
 
-@dataclasses.dataclass
-class Publication:
-    title: str
-    year: int
-    doi: str
-    repo: str = None
-
-    @property
-    def doi_badge(self):
-        return f"https://img.shields.io/badge/DOI-{urllib.parse.quote_plus(self.doi).replace('_', '__').replace('-', '--')}-cfd8dc?labelColor=black&style=flat-square"
-
-    def __str__(self):
-        title = (
-            f"**[{self.title} ({self.year})]({self.repo})**"
-            if self.repo
-            else f"**{self.title} ({self.year})**"
-        )
-        return f'<a href="https://doi.org/{self.doi}"><img src="{self.doi_badge}" align="right"></a>{title}'
+def fetch(path):
+    if local := os.environ.get("WEBSITE_DIR"):
+        return Path(local, path).read_text(encoding="utf-8")
+    with urllib.request.urlopen(f"{RAW}/{path}") as response:
+        return response.read().decode("utf-8")
 
 
-publications = [
-    Publication(
-        title="Building Symbiotic Artificial Intelligence: Reviewing the AI Act for a Human-Centred, Principle-Based Framework",
-        year=2025,
-        doi="10.1007/s11023-025-09753-w",
-    ),
-    Publication(
-        year=2025,
-        title="Understanding User Mental Models in AI-driven Code Completion Tools: Insights from an Elicitation Study",
-        doi="10.1016/j.ijhcs.2025.103648",
-    ),
-    Publication(
-        year=2025,
-        title="A Dataset of Interactions and Emotions for Website User Experience Evaluation",
-        doi="10.1038/s41597-025-06079-1",
-    ),
-    Publication(
-        year=2024,
-        title="From Human-Centered to Symbiotic Artificial Intelligence: A Focus on Medical Applications",
-        doi="10.1007/s11042-024-20414-5",
-    ),
-    Publication(
-        year=2024,
-        title="Bridging the Gap between GPDR and Software Development: The MATERIALIST Framework",
-        doi="10.1007/s11042-024-19923-0",
-    ),
-    Publication(
-        year=2024,
-        title="A Human–AI Interaction Paradigm and Its Application to Rhinocytology",
-        doi="10.1016/j.artmed.2024.102933",
-    ),
-    Publication(
-        year=2024,
-        title="The Fine Line between Automation and Augmentation in Website Usability Evaluation",
-        doi="10.1038/s41598-024-59616-0",
-    ),
-    Publication(
-        year=2024,
-        title="Automated Detection of Alzheimer’s Disease: A Multi-Modal Approach with 3D MRI and Amyloid PET",
-        doi="10.1038/s41598-024-56001-9",
-    ),
-]
+def latex_to_text(value):
+    text = Text.from_latex(value).render_as("text")
+    return re.sub(r"\s+", " ", text.replace("---", "—").replace("--", "–")).strip()
 
-articles = ["- " + str(s) + "\n" for s in publications]
 
-with open("README.md", "r") as f:
-    readme = f.readlines()
+def sort_key(entry):
+    month = str(entry.fields.get("month", "0")).lower()[:3]
+    return int(entry.fields.get("year", 0)), MONTHS.get(month, int(month) if month.isdigit() else 0)
 
-start, end = [
-    i
-    for i, s in enumerate(readme)
-    if s
-    in [
-        "<!-- SCIENTIFIC-ARTICLES-LIST:START -->\n",
-        "<!-- SCIENTIFIC-ARTICLES-LIST:END -->\n",
+
+def format_authors(entry):
+    names = []
+    for person in entry.persons.get("author", []):
+        last = latex_to_text(" ".join(person.prelast_names + person.last_names))
+        first = latex_to_text(" ".join(person.first_names + person.middle_names))
+        initials = " ".join(f"{part[0]}." for part in re.split(r"[\s-]+", first) if part)
+        name = f"{initials} {last}".strip()
+        names.append(f"**{name}**" if (last, first) == ME else name)
+    if len(names) > 6:
+        names = names[:5] + ["et al."]
+    if len(names) > 1 and names[-1] != "et al.":
+        return ", ".join(names[:-1]) + ", and " + names[-1]
+    return ", ".join(names)
+
+
+def doi_badge(doi):
+    label = urllib.parse.quote(doi, safe="").replace("-", "--").replace("_", "__")
+    return (
+        f'<a href="https://doi.org/{doi}">'
+        f'<img src="https://img.shields.io/badge/DOI-{label}-cfd8dc?labelColor=black&style=flat-square" '
+        f'alt="DOI: {doi}" align="right"></a>'
+    )
+
+
+def format_entry(key, entry, blurb=None):
+    fields = entry.fields
+    title = latex_to_text(fields["title"])
+    venue = latex_to_text(fields.get("journal") or fields.get("booktitle") or fields.get("publisher", ""))
+    year = fields.get("year", "")
+    lines = [
+        (doi_badge(fields["doi"]) if "doi" in fields else "")
+        + f"**[{title}]({SITE}/bibliography/{key}.html)**",
+        f"  {format_authors(entry).removesuffix('.')}. *{venue}*, {year}."
+        if venue
+        else f"  {format_authors(entry)}, {year}.",
     ]
-]
+    if blurb:
+        lines.append(f"  {' '.join(blurb.split())}")
+    # Two trailing spaces force a line break within the same list item.
+    return "- " + "  \n".join(lines) + "\n"
 
-with open("README.md", "w") as f:
-    f.writelines(readme[0 : start + 1] + articles + readme[end:])
+
+def replace_section(readme, tag, content):
+    pattern = re.compile(rf"(<!-- {tag}:START -->\n).*?(<!-- {tag}:END -->)", re.DOTALL)
+    if not pattern.search(readme):
+        raise ValueError(f"Missing {tag} markers in README.md")
+    return pattern.sub(lambda m: m.group(1) + content + m.group(2), readme)
+
+
+def main():
+    bib = parse_string(fetch("_bibliography/references.bib"), "bibtex").entries
+    highlights = yaml.safe_load(fetch("_data/highlights.yml")).get("highlights") or []
+
+    featured = "".join(format_entry(h["paper"], bib[h["paper"]], h.get("text")) for h in highlights)
+    if featured:
+        featured = (
+            "### ⭐ Featured Publications\n\n"
+            "A few papers I'm particularly proud of, with a short note on why they matter.\n\n"
+            + featured
+            + "\n"
+        )
+
+    articles = sorted(
+        ((key, entry) for key, entry in bib.items() if entry.type.lower() == "article"),
+        key=lambda item: sort_key(item[1]),
+        reverse=True,
+    )[:JOURNAL_ARTICLES]
+    journal = "".join(format_entry(key, entry) for key, entry in articles)
+
+    readme = README.read_text(encoding="utf-8")
+    readme = replace_section(readme, "FEATURED-PUBLICATIONS", featured)
+    readme = replace_section(readme, "JOURNAL-ARTICLES", journal)
+    README.write_text(readme, encoding="utf-8")
+
+
+if __name__ == "__main__":
+    main()
