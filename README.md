@@ -52,8 +52,8 @@ My latest journal articles. The full list of my publications, with links to open
 
 <!-- BLOG-POST-LIST:START -->
 - [On Doom-Scrolling and Brain Fog as Escaping Mechanisms](https://espositoandrea.github.io/blog/posts/2026/09/on-doom-scrolling-and-brain-fog.html)
+- [On Compendiums and General Notebooks Usage](https://espositoandrea.github.io/blog/posts/2025/10/on-compendiums-and-general-notebooks-usage.html)
 - [My struggle with boredom in an uninteresting city](https://espositoandrea.github.io/blog/posts/2025/09/my-struggle-with-boredom-in-an-uninteresting-city.html)
 - [I recently got a typewriter in an attempt to regain my focus](https://espositoandrea.github.io/blog/posts/2025/08/typewriter.html)
-- [Beyond Automation, Toward Symbiosis: Interactions Between Humans and Artificial Intelligence](https://espositoandrea.github.io/blog/posts/2024/11/beyond-automation.html)
-- [The need and format for publications is stifling innovation and science adoption](https://espositoandrea.github.io/blog/posts/2024/06/publication-format.html)
+- [The Power of Handwriting: Embracing Slowness in a Digital World](https://espositoandrea.github.io/blog/posts/2025/08/power-of-handwriting.html)
 <!-- BLOG-POST-LIST:END -->
